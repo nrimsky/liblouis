@@ -11,6 +11,11 @@ emmake make &&
 
 emmake make install prefix="$(pwd)/out-emscripten-install"
 
-buildjs "16" "build-tables-embeded-root-utf16.js" "--embed-files ./out-emscripten-install/share/liblouis/tables/" &&
+echo "[liblouis-js] configuring and making UTF-32 builds..." &&
+emconfigure ./configure --enable-ucs4 --disable-shared &&
+emmake make &&
+
+echo "[liblouis-js] building UTF-32" &&
+buildjs "32" "build-tables-embeded-root-utf32.js" "--embed-files ./out-emscripten-install/share/liblouis/tables/" &&
 
 echo "[liblouis-js] done building in docker image..."

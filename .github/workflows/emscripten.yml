@@ -31,5 +31,5 @@ jobs:
     - name: Upload the Table assets
       uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
       with:
-        name: build-tables-embeded-root-utf16.js
-        path: ./out/build-tables-embeded-root-utf16.js
+        name: build-tables-embeded-root-utf32.js
+        path: ./out/build-tables-embeded-root-utf32.js
